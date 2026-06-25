@@ -1,10 +1,10 @@
 package qlsanpham;
 
 import java.util.Scanner;
-public class SanPham {
+public abstract class SanPham {
 	private String maSP;
 	private String tenSP;
-	private double donGia;
+	protected double donGia;
 	
 	// 2 constructor
 	public SanPham() {}
@@ -69,7 +69,5 @@ public class SanPham {
 	}
 	
 	//tinh gia ban 
-	public double tinhGiaBan() {
-		return donGia;
-	}
+	public abstract double tinhGiaBan();
 }

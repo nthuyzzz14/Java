@@ -22,7 +22,7 @@ public class main {
 		for (int i = 1; i <= n; i++) {
 			System.out.println("\n===== NHAP THONG TIN CHO SAN PHAM THU "+i+" =====");
 			
-			SanPham sp = new SanPham();
+			SanPham sp = new SanPhamNhapKhau();
 			sp.nhapTT(input);
 			dsSP.add(sp);
 		}
@@ -45,6 +45,24 @@ public class main {
 		for (SanPham sp : dsSP) {
 			System.out.println("\nGia ban cua san pham "+sp.gettenSP()+" la: "+sp.tinhGiaBan());
 		}
-				
+		
+		// sap xep tang dan theo gia ban
+		int m = dsSP.size();
+		for (int i = 0; i < m - 1; i++) {
+			for(int j = 0; j < m - i - 1; j++) {
+				if(dsSP.get(j).tinhGiaBan() > dsSP.get(j+1).tinhGiaBan()) {
+					SanPham temp = dsSP.get(j);
+					dsSP.set(j, dsSP.get(j+1));
+					dsSP.set(j+1, temp);
+				}
+			}
+		}
+		
+		System.out.println("===== DANH SACH SAN PHAM DUOC SAP XEP GIA TANG DAN =====");
+		for(SanPham sp : dsSP) {
+			System.out.println(sp);
+		}
+		
+		input.close();
 	}
 }
