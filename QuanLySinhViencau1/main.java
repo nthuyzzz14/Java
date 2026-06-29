@@ -33,11 +33,13 @@ public class main {
 		}
 		
 		//thuat toan tim sinh vien diem cao nhat 
-		double max = dsSV.get(0).getdiemTB();
-		for (SinhVien sv : dsSV) {
-			if(sv.getdiemTB() > max)
-				max = sv.getdiemTB();
+		SinhVien max = dsSV.get(0);
+		for(SinhVien sv : dsSV){
+			if(sv.getdiemTB() > max.getdiemTB())
+				max = sv;
 		}
-		System.out.println("\nDiem trung binh cao nhat = "+max);
+
+		System.out.println("\n__________ SINH VIEN CO DIEM CAO NHAT __________");
+		System.out.println(max);
 	}
 }

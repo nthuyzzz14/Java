@@ -32,7 +32,7 @@ public class NhanVien {
 	public void nhapTT(Scanner nhap) {
 		System.out.print("Nhap ma nhan vien: ");
 		maNV = nhap.nextLine();
-		nhap.nextLine();
+		
 		//nhap ten
 		while(true) {
 			try {
@@ -53,6 +53,7 @@ public class NhanVien {
 			try {
 				System.out.print("Nhap luong nhan vien: ");
 				luongCB = nhap.nextDouble();
+				nhap.nextLine();
 				//bat loi luong am
 				if (luongCB < 0) {
 					throw new Exception();

@@ -81,7 +81,7 @@ public class SinhVien {
 	//hien thi ra man hinh
 	@Override
 	public String toString() {
-		return	"_______________________"+ 
+		return	"\n_______________________"+ 
 				"\n| Ma sinh vien: "+maSV+
 				"\n| Ho va ten: "+hoTen+
 				"\n| Diem: "+diemTB+

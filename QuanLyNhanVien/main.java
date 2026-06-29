@@ -12,6 +12,7 @@ public class main {
 		do {
 			System.out.print("Nhap so luong nhan vien (2 - 100): ");
 			n = nhap.nextInt();
+			nhap.nextLine();
 			
 			if(n < 2 || n > 100) {
 				System.out.println("\nLoi: So luong nhan vien phai nam trong khoang 2 - 100 !");
@@ -34,12 +35,13 @@ public class main {
 		}
 		
 		//tinh nhanvien luong cao nhat
-		double max = dsNV.get(0).getluongCB();
-		for (NhanVien nv : dsNV) {
-			if (nv.getluongCB() > max) {
-				max = nv.getluongCB();
-			}
+		NhanVien max = dsNV.get(0);
+		for(NhanVien nv : dsNV){
+			if(nv.getluongCB() > max.getluongCB())
+				max = nv;
 		}
-		System.out.println("\nNhan vien co thu nhap cao nhat = "+max);
+
+		System.out.println("\n________ NHAN VIEN CO LUONG CAO NHAT __________");
+		System.out.println(max);
 	}
 }
